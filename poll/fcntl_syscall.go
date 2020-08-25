@@ -7,8 +7,9 @@
 package poll
 
 import (
-	"internal/syscall/unix"
 	"syscall"
+
+	"github.com/nytesoftware/go-internal/syscall/unix"
 )
 
 func fcntl(fd int, cmd int, arg int) (int, error) {

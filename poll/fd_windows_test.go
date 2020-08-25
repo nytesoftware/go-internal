@@ -6,11 +6,12 @@ package poll_test
 
 import (
 	"fmt"
-	"internal/poll"
 	"os"
 	"sync"
 	"syscall"
 	"testing"
+
+	"github.com/nytesoftware/go-internal/poll"
 )
 
 type loggedFD struct {

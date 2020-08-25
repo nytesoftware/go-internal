@@ -5,10 +5,11 @@
 package poll
 
 import (
-	"internal/syscall/unix"
 	"sync/atomic"
 	"syscall"
 	"unsafe"
+
+	"github.com/nytesoftware/go-internal/syscall/unix"
 )
 
 const (
