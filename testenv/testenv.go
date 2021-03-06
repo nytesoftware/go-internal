@@ -13,6 +13,7 @@ package testenv
 import (
 	"errors"
 	"flag"
+	"internal/cfg"
 	"os"
 	"os/exec"
 	"path/filepath"
@@ -21,8 +22,6 @@ import (
 	"strings"
 	"sync"
 	"testing"
-
-	"github.com/nytesoftware/go-internal/cfg"
 )
 
 // Builder reports the name of the builder running this test

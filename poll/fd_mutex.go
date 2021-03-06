@@ -193,8 +193,8 @@ func (mu *fdMutex) rwunlock(read bool) bool {
 }
 
 // Implemented in runtime package.
-func runtime_Semacquire(sema *uint32) { return }
-func runtime_Semrelease(sema *uint32) { return }
+func runtime_Semacquire(sema *uint32)
+func runtime_Semrelease(sema *uint32)
 
 // incref adds a reference to fd.
 // It returns an error when fd cannot be used.

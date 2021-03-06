@@ -5,14 +5,13 @@
 package cpu_test
 
 import (
+	. "internal/cpu"
+	"internal/testenv"
 	"os"
 	"os/exec"
 	"runtime"
 	"strings"
 	"testing"
-
-	. "github.com/nytesoftware/go-internal/cpu"
-	"github.com/nytesoftware/go-internal/testenv"
 )
 
 func TestMinimalFeatures(t *testing.T) {

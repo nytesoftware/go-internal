@@ -5,7 +5,7 @@
 package poll
 
 import (
-	"github.com/nytesoftware/go-internal/syscall/unix"
+	"internal/syscall/unix"
 	"sync/atomic"
 	"syscall"
 	"unsafe"
@@ -52,7 +52,7 @@ func Splice(dst, src *FD, remain int64) (written int64, handled bool, sc string,
 		// If inPipe == 0 && err == nil, src is at EOF, and the
 		// transfer is complete.
 		handled = handled || (err != syscall.EINVAL)
-		if err != nil || inPipe == 0 {
+		if err != nil || (inPipe == 0 && err == nil) {
 			break
 		}
 		n, err = splicePump(dst, prfd, inPipe)

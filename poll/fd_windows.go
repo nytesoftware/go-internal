@@ -6,8 +6,8 @@ package poll
 
 import (
 	"errors"
-	"github.com/nytesoftware/go-internal/race"
-	"github.com/nytesoftware/go-internal/syscall/windows"
+	"internal/race"
+	"internal/syscall/windows"
 	"io"
 	"sync"
 	"syscall"

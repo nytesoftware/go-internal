@@ -14,7 +14,7 @@ import (
 	"testing"
 	"unsafe"
 
-	"github.com/nytesoftware/go-internal/syscall/windows/registry"
+	"internal/syscall/windows/registry"
 )
 
 func randKeyName(prefix string) string {

@@ -3,7 +3,7 @@
 package registry
 
 import (
-	"github.com/nytesoftware/go-internal/syscall/windows/sysdll"
+	"internal/syscall/windows/sysdll"
 	"syscall"
 	"unsafe"
 )

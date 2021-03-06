@@ -2,13 +2,12 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-//go:build illumos
 // +build illumos
 
 package poll
 
 import (
-	"github.com/nytesoftware/go-internal/syscall/unix"
+	"internal/syscall/unix"
 	"syscall"
 )
 

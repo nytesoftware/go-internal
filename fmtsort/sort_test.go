@@ -6,13 +6,12 @@ package fmtsort_test
 
 import (
 	"fmt"
+	"internal/fmtsort"
 	"math"
 	"reflect"
 	"strings"
 	"testing"
 	"unsafe"
-
-	"github.com/nytesoftware/go-internal/fmtsort"
 )
 
 var compareTests = [][]reflect.Value{

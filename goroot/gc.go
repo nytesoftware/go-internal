@@ -2,18 +2,16 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-//go:build gc
 // +build gc
 
 package goroot
 
 import (
+	exec "internal/execabs"
 	"os"
 	"path/filepath"
 	"strings"
 	"sync"
-
-	exec "github.com/nytesoftware/go-internal/execabs"
 )
 
 // IsStandardPackage reports whether path is a standard package,

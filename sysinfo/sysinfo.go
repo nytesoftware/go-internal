@@ -7,9 +7,8 @@
 package sysinfo
 
 import (
+	internalcpu "internal/cpu"
 	"sync"
-
-	internalcpu "github.com/nytesoftware/go-internal/cpu"
 )
 
 type cpuInfo struct {

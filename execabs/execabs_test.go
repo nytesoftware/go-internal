@@ -7,14 +7,13 @@ package execabs
 import (
 	"context"
 	"fmt"
+	"internal/testenv"
 	"io/ioutil"
 	"os"
 	"os/exec"
 	"path/filepath"
 	"runtime"
 	"testing"
-
-	"github.com/nytesoftware/go-internal/testenv"
 )
 
 func TestFixCmd(t *testing.T) {

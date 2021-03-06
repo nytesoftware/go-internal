@@ -6,7 +6,7 @@ package poll_test
 
 import (
 	"fmt"
-	"github.com/nytesoftware/go-internal/poll"
+	"internal/poll"
 	"os"
 	"sync"
 	"syscall"

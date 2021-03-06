@@ -4,7 +4,7 @@
 
 package bytealg
 
-import "github.com/nytesoftware/go-internal/cpu"
+import "internal/cpu"
 
 const MaxBruteForce = 64
 
