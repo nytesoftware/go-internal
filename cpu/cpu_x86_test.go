@@ -7,10 +7,11 @@
 package cpu_test
 
 import (
-	. "internal/cpu"
 	"os"
 	"runtime"
 	"testing"
+
+	. "github.com/nytesoftware/go-internal/cpu"
 )
 
 func TestX86ifAVX2hasAVX(t *testing.T) {

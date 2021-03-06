@@ -6,10 +6,11 @@ package cpu_test
 
 import (
 	"errors"
-	. "internal/cpu"
 	"os"
 	"regexp"
 	"testing"
+
+	. "github.com/nytesoftware/go-internal/cpu"
 )
 
 func getFeatureList() ([]string, error) {

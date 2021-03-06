@@ -5,8 +5,9 @@
 package bytealg
 
 import (
-	"internal/cpu"
 	"unsafe"
+
+	"github.com/nytesoftware/go-internal/cpu"
 )
 
 // Offsets into internal/cpu records for use in assembly.

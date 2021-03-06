@@ -5,9 +5,10 @@
 package poll
 
 import (
-	"internal/syscall/unix"
 	"sync/atomic"
 	"syscall"
+
+	"github.com/nytesoftware/go-internal/syscall/unix"
 )
 
 var copyFileRangeSupported int32 = -1 // accessed atomically

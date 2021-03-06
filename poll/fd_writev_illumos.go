@@ -7,8 +7,9 @@
 package poll
 
 import (
-	"internal/syscall/unix"
 	"syscall"
+
+	"github.com/nytesoftware/go-internal/syscall/unix"
 )
 
 func writev(fd int, iovecs []syscall.Iovec) (uintptr, error) {
