@@ -19,15 +19,15 @@ import (
 //go:linkname runtimeNano runtime.nanotime
 func runtimeNano() int64
 
-func runtime_pollServerInit()
-func runtime_pollOpen(fd uintptr) (uintptr, int)
-func runtime_pollClose(ctx uintptr)
-func runtime_pollWait(ctx uintptr, mode int) int
-func runtime_pollWaitCanceled(ctx uintptr, mode int) int
-func runtime_pollReset(ctx uintptr, mode int) int
-func runtime_pollSetDeadline(ctx uintptr, d int64, mode int)
-func runtime_pollUnblock(ctx uintptr)
-func runtime_isPollServerDescriptor(fd uintptr) bool
+func runtime_pollServerInit() { return }
+func runtime_pollOpen(fd uintptr) (uintptr, int) { return 0, 0 }
+func runtime_pollClose(ctx uintptr) { return }
+func runtime_pollWait(ctx uintptr, mode int) int { return 0 }
+func runtime_pollWaitCanceled(ctx uintptr, mode int) int { return 0 }
+func runtime_pollReset(ctx uintptr, mode int) int { return 0 }
+func runtime_pollSetDeadline(ctx uintptr, d int64, mode int) { return }
+func runtime_pollUnblock(ctx uintptr) { return }
+func runtime_isPollServerDescriptor(fd uintptr) bool { return false }
 
 type pollDesc struct {
 	runtimeCtx uintptr
