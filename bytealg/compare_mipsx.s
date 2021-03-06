@@ -39,7 +39,7 @@ cmp_ret:
 	MOVW	R8, ret+24(FP)
 	RET
 
-TEXT runtime·cmpstring(SB),NOSPLIT,$0-20
+TEXT runtime·cmpstring_nyte(SB),NOSPLIT,$0-20
 	MOVW	a_base+0(FP), R3
 	MOVW	a_len+4(FP), R1
 	MOVW	b_base+8(FP), R4

@@ -13,7 +13,7 @@ TEXT ·Compare(SB),NOSPLIT|NOFRAME,$0-56
 	LA	ret+48(FP), R7
 	BR	cmpbody<>(SB)
 
-TEXT runtime·cmpstring(SB),NOSPLIT|NOFRAME,$0-40
+TEXT runtime·cmpstring_nyte(SB),NOSPLIT|NOFRAME,$0-40
 	MOVD	a_base+0(FP), R3
 	MOVD	a_len+8(FP), R4
 	MOVD	b_base+16(FP), R5

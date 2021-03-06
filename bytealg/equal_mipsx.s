@@ -9,8 +9,8 @@
 
 #define	REGCTXT	R22
 
-// memequal(a, b unsafe.Pointer, size uintptr) bool
-TEXT runtime·memequal(SB),NOSPLIT,$0-13
+// memequal_nyte(a, b unsafe.Pointer, size uintptr) bool
+TEXT runtime·memequal_nyte(SB),NOSPLIT,$0-13
 	MOVW	a+0(FP), R1
 	MOVW	b+4(FP), R2
 	BEQ	R1, R2, eq
@@ -35,8 +35,8 @@ eq:
 	MOVB	R1, ret+12(FP)
 	RET
 
-// memequal_varlen(a, b unsafe.Pointer) bool
-TEXT runtime·memequal_varlen(SB),NOSPLIT,$0-9
+// memequal_nyte_varlen(a, b unsafe.Pointer) bool
+TEXT runtime·memequal_nyte_varlen(SB),NOSPLIT,$0-9
 	MOVW	a+0(FP), R1
 	MOVW	b+4(FP), R2
 	BEQ	R1, R2, eq

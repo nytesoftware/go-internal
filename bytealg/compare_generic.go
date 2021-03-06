@@ -35,8 +35,8 @@ samebytes:
 	return 0
 }
 
-//go:linkname runtime_cmpstring runtime.cmpstring
-func runtime_cmpstring(a, b string) int {
+//go:linkname runtime_cmpstring_nyte runtime.cmpstring_nyte
+func runtime_cmpstring_nyte(a, b string) int {
 	l := len(a)
 	if len(b) < l {
 		l = len(b)

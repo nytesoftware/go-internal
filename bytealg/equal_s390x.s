@@ -5,16 +5,16 @@
 #include "go_asm.h"
 #include "textflag.h"
 
-// memequal(a, b unsafe.Pointer, size uintptr) bool
-TEXT runtime·memequal(SB),NOSPLIT|NOFRAME,$0-25
+// memequal_nyte(a, b unsafe.Pointer, size uintptr) bool
+TEXT runtime·memequal_nyte(SB),NOSPLIT|NOFRAME,$0-25
 	MOVD	a+0(FP), R3
 	MOVD	b+8(FP), R5
 	MOVD	size+16(FP), R6
 	LA	ret+24(FP), R7
 	BR	memeqbody<>(SB)
 
-// memequal_varlen(a, b unsafe.Pointer) bool
-TEXT runtime·memequal_varlen(SB),NOSPLIT|NOFRAME,$0-17
+// memequal_nyte_varlen(a, b unsafe.Pointer) bool
+TEXT runtime·memequal_nyte_varlen(SB),NOSPLIT|NOFRAME,$0-17
 	MOVD	a+0(FP), R3
 	MOVD	b+8(FP), R5
 	MOVD	8(R12), R6    // compiler stores size at offset 8 in the closure

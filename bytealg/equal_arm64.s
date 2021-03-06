@@ -5,8 +5,8 @@
 #include "go_asm.h"
 #include "textflag.h"
 
-// memequal(a, b unsafe.Pointer, size uintptr) bool
-TEXT runtime·memequal(SB),NOSPLIT|NOFRAME,$0-25
+// memequal_nyte(a, b unsafe.Pointer, size uintptr) bool
+TEXT runtime·memequal_nyte(SB),NOSPLIT|NOFRAME,$0-25
 	MOVD	size+16(FP), R1
 	// short path to handle 0-byte case
 	CBZ	R1, equal
@@ -19,8 +19,8 @@ equal:
 	MOVB	R0, ret+24(FP)
 	RET
 
-// memequal_varlen(a, b unsafe.Pointer) bool
-TEXT runtime·memequal_varlen(SB),NOSPLIT,$40-17
+// memequal_nyte_varlen(a, b unsafe.Pointer) bool
+TEXT runtime·memequal_nyte_varlen(SB),NOSPLIT,$40-17
 	MOVD	a+0(FP), R3
 	MOVD	b+8(FP), R4
 	CMP	R3, R4
@@ -30,7 +30,7 @@ TEXT runtime·memequal_varlen(SB),NOSPLIT,$40-17
 	MOVD	R3, 8(RSP)
 	MOVD	R4, 16(RSP)
 	MOVD	R5, 24(RSP)
-	BL	runtime·memequal(SB)
+	BL	runtime·memequal_nyte(SB)
 	MOVBU	32(RSP), R3
 	MOVB	R3, ret+16(FP)
 	RET

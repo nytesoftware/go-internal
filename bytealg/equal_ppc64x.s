@@ -7,8 +7,8 @@
 #include "go_asm.h"
 #include "textflag.h"
 
-// memequal(a, b unsafe.Pointer, size uintptr) bool
-TEXT runtime·memequal(SB),NOSPLIT|NOFRAME,$0-25
+// memequal_nyte(a, b unsafe.Pointer, size uintptr) bool
+TEXT runtime·memequal_nyte(SB),NOSPLIT|NOFRAME,$0-25
 	MOVD    a+0(FP), R3
 	MOVD    b+8(FP), R4
 	MOVD    size+16(FP), R5
@@ -16,8 +16,8 @@ TEXT runtime·memequal(SB),NOSPLIT|NOFRAME,$0-25
 
 	BR	memeqbody<>(SB)
 
-// memequal_varlen(a, b unsafe.Pointer) bool
-TEXT runtime·memequal_varlen(SB),NOSPLIT|NOFRAME,$0-17
+// memequal_nyte_varlen(a, b unsafe.Pointer) bool
+TEXT runtime·memequal_nyte_varlen(SB),NOSPLIT|NOFRAME,$0-17
 	MOVD	a+0(FP), R3
 	MOVD	b+8(FP), R4
 	CMP	R3, R4
@@ -30,7 +30,7 @@ eq:
 	MOVB	R3, ret+16(FP)
 	RET
 
-// Do an efficient memequal for ppc64
+// Do an efficient memequal_nyte for ppc64
 // R3 = s1
 // R4 = s2
 // R5 = len

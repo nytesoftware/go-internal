@@ -5,8 +5,8 @@
 #include "go_asm.h"
 #include "textflag.h"
 
-// memequal(a, b unsafe.Pointer, size uintptr) bool
-TEXT runtime·memequal(SB),NOSPLIT,$0-13
+// memequal_nyte(a, b unsafe.Pointer, size uintptr) bool
+TEXT runtime·memequal_nyte(SB),NOSPLIT,$0-13
 	MOVL	a+0(FP), SI
 	MOVL	b+4(FP), DI
 	CMPL	SI, DI
@@ -18,8 +18,8 @@ eq:
 	MOVB    $1, ret+12(FP)
 	RET
 
-// memequal_varlen(a, b unsafe.Pointer) bool
-TEXT runtime·memequal_varlen(SB),NOSPLIT,$0-9
+// memequal_nyte_varlen(a, b unsafe.Pointer) bool
+TEXT runtime·memequal_nyte_varlen(SB),NOSPLIT,$0-9
 	MOVL    a+0(FP), SI
 	MOVL    b+4(FP), DI
 	CMPL    SI, DI

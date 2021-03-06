@@ -13,7 +13,7 @@ TEXT ·Compare(SB),NOSPLIT,$0-56
 	LEAQ	ret+48(FP), R9
 	JMP	cmpbody<>(SB)
 
-TEXT runtime·cmpstring(SB),NOSPLIT,$0-40
+TEXT runtime·cmpstring_nyte(SB),NOSPLIT,$0-40
 	MOVQ	a_base+0(FP), SI
 	MOVQ	a_len+8(FP), BX
 	MOVQ	b_base+16(FP), DI

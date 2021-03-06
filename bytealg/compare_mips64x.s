@@ -15,7 +15,7 @@ TEXT ·Compare(SB),NOSPLIT,$0-56
 	MOVV	$ret+48(FP), R9
 	JMP	cmpbody<>(SB)
 
-TEXT runtime·cmpstring(SB),NOSPLIT,$0-40
+TEXT runtime·cmpstring_nyte(SB),NOSPLIT,$0-40
 	MOVV	a_base+0(FP), R3
 	MOVV	b_base+16(FP), R4
 	MOVV	a_len+8(FP), R1

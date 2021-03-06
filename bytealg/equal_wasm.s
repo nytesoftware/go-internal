@@ -5,8 +5,8 @@
 #include "go_asm.h"
 #include "textflag.h"
 
-// memequal(p, q unsafe.Pointer, size uintptr) bool
-TEXT runtime·memequal(SB), NOSPLIT, $0-25
+// memequal_nyte(p, q unsafe.Pointer, size uintptr) bool
+TEXT runtime·memequal_nyte(SB), NOSPLIT, $0-25
 	Get SP
 	I64Load a+0(FP)
 	I64Load b+8(FP)
@@ -15,8 +15,8 @@ TEXT runtime·memequal(SB), NOSPLIT, $0-25
 	I64Store8 ret+24(FP)
 	RET
 
-// memequal_varlen(a, b unsafe.Pointer) bool
-TEXT runtime·memequal_varlen(SB), NOSPLIT, $0-17
+// memequal_nyte_varlen(a, b unsafe.Pointer) bool
+TEXT runtime·memequal_nyte_varlen(SB), NOSPLIT, $0-17
 	Get SP
 	I64Load a+0(FP)
 	I64Load b+8(FP)

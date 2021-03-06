@@ -7,8 +7,8 @@
 
 #define	CTXT	S4
 
-// func memequal(a, b unsafe.Pointer, size uintptr) bool
-TEXT runtime·memequal(SB),NOSPLIT|NOFRAME,$0-25
+// func memequal_nyte(a, b unsafe.Pointer, size uintptr) bool
+TEXT runtime·memequal_nyte(SB),NOSPLIT|NOFRAME,$0-25
 	MOV	a+0(FP), A1
 	MOV	b+8(FP), A2
 	BEQ	A1, A2, eq
@@ -30,8 +30,8 @@ eq:
 	MOVB	A1, ret+24(FP)
 	RET
 
-// func memequal_varlen(a, b unsafe.Pointer) bool
-TEXT runtime·memequal_varlen(SB),NOSPLIT,$40-17
+// func memequal_nyte_varlen(a, b unsafe.Pointer) bool
+TEXT runtime·memequal_nyte_varlen(SB),NOSPLIT,$40-17
 	MOV	a+0(FP), A1
 	MOV	b+8(FP), A2
 	BEQ	A1, A2, eq
@@ -39,7 +39,7 @@ TEXT runtime·memequal_varlen(SB),NOSPLIT,$40-17
 	MOV	A1, 8(X2)
 	MOV	A2, 16(X2)
 	MOV	A3, 24(X2)
-	CALL	runtime·memequal(SB)
+	CALL	runtime·memequal_nyte(SB)
 	MOVBU	32(X2), A1
 	MOVB	A1, ret+16(FP)
 	RET

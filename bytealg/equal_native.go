@@ -10,12 +10,12 @@ import "unsafe"
 // implemented in assembly in this package but declared in another
 // package.
 
-// The compiler generates calls to runtime.memequal and runtime.memequal_varlen.
-// In addition, the runtime calls runtime.memequal explicitly.
+// The compiler generates calls to runtime.memequal_nyte and runtime.memequal_nyte_varlen.
+// In addition, the runtime calls runtime.memequal_nyte explicitly.
 // Those functions are implemented in this package.
 
-//go:linkname abigen_runtime_memequal runtime.memequal
-func abigen_runtime_memequal(a, b unsafe.Pointer, size uintptr) bool
+//go:linkname abigen_runtime_memequal_nyte runtime.memequal_nyte
+func abigen_runtime_memequal_nyte(a, b unsafe.Pointer, size uintptr) bool
 
-//go:linkname abigen_runtime_memequal_varlen runtime.memequal_varlen
-func abigen_runtime_memequal_varlen(a, b unsafe.Pointer) bool
+//go:linkname abigen_runtime_memequal_nyte_varlen runtime.memequal_nyte_varlen
+func abigen_runtime_memequal_nyte_varlen(a, b unsafe.Pointer) bool

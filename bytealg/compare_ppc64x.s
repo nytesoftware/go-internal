@@ -37,7 +37,7 @@ done:
 	MOVD	$0, (R7)
 	RET
 
-TEXT runtime·cmpstring(SB),NOSPLIT|NOFRAME,$0-40
+TEXT runtime·cmpstring_nyte(SB),NOSPLIT|NOFRAME,$0-40
 	MOVD	a_base+0(FP), R5
 	MOVD	b_base+16(FP), R6
 	MOVD	a_len+8(FP), R3
