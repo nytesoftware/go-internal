@@ -37,15 +37,15 @@ done:
 	MOVD	$0, (R7)
 	RET
 
-TEXT runtime·cmpstring(SB),NOSPLIT|NOFRAME,$0-40
-	MOVD	a_base+0(FP), R5
-	MOVD	b_base+16(FP), R6
-	MOVD	a_len+8(FP), R3
-	CMP	R5,R6,CR7
-	MOVD	b_len+24(FP), R4
-	MOVD	$ret+32(FP), R7
-	CMP	R3,R4,CR6
-	BEQ	CR7,equal
+; TEXT runtime·cmpstring(SB),NOSPLIT|NOFRAME,$0-40
+; 	MOVD	a_base+0(FP), R5
+; 	MOVD	b_base+16(FP), R6
+; 	MOVD	a_len+8(FP), R3
+; 	CMP	R5,R6,CR7
+; 	MOVD	b_len+24(FP), R4
+; 	MOVD	$ret+32(FP), R7
+; 	CMP	R3,R4,CR6
+; 	BEQ	CR7,equal
 
 #ifdef	GOARCH_ppc64le
 	BR	cmpbodyLE<>(SB)
