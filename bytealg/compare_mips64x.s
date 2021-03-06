@@ -15,13 +15,13 @@ TEXT ·Compare(SB),NOSPLIT,$0-56
 	MOVV	$ret+48(FP), R9
 	JMP	cmpbody<>(SB)
 
-; TEXT runtime·cmpstring(SB),NOSPLIT,$0-40
-; 	MOVV	a_base+0(FP), R3
-; 	MOVV	b_base+16(FP), R4
-; 	MOVV	a_len+8(FP), R1
-; 	MOVV	b_len+24(FP), R2
-; 	MOVV	$ret+32(FP), R9
-; 	JMP	cmpbody<>(SB)
+TEXT runtime·cmpstring(SB),NOSPLIT,$0-40
+	MOVV	a_base+0(FP), R3
+	MOVV	b_base+16(FP), R4
+	MOVV	a_len+8(FP), R1
+	MOVV	b_len+24(FP), R2
+	MOVV	$ret+32(FP), R9
+	JMP	cmpbody<>(SB)
 
 // On entry:
 // R1 length of a
