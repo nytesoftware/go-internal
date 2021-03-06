@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
+//go:build aix || darwin || dragonfly || freebsd || (js && wasm) || linux || netbsd || openbsd || solaris || windows
 // +build aix darwin dragonfly freebsd js,wasm linux netbsd openbsd solaris windows
 
 package poll
@@ -27,17 +28,6 @@ func (fd *FD) Shutdown(how int) error {
 	}
 	defer fd.decref()
 	return syscall.Shutdown(fd.Sysfd, how)
-}
-
-// Fchmod wraps syscall.Fchmod.
-func (fd *FD) Fchmod(mode uint32) error {
-	if err := fd.incref(); err != nil {
-		return err
-	}
-	defer fd.decref()
-	return ignoringEINTR(func() error {
-		return syscall.Fchmod(fd.Sysfd, mode)
-	})
 }
 
 // Fchown wraps syscall.Fchown.

@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
+//go:build windows
 // +build windows
 
 package execenv
 
 import (
+	"internal/syscall/windows"
 	"syscall"
 	"unicode/utf16"
 	"unsafe"
-
-	"github.com/nytesoftware/go-internal/syscall/windows"
 )
 
 // Default will return the default environment

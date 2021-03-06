@@ -5,9 +5,8 @@
 package reflectlite
 
 import (
+	"internal/unsafeheader"
 	"unsafe"
-
-	"github.com/nytesoftware/go-internal/unsafeheader"
 )
 
 // Swapper returns a function that swaps the elements in the provided

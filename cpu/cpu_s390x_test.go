@@ -6,15 +6,14 @@ package cpu_test
 
 import (
 	"errors"
-	"io/ioutil"
+	. "internal/cpu"
+	"os"
 	"regexp"
 	"testing"
-
-	. "github.com/nytesoftware/go-internal/cpu"
 )
 
 func getFeatureList() ([]string, error) {
-	cpuinfo, err := ioutil.ReadFile("/proc/cpuinfo")
+	cpuinfo, err := os.ReadFile("/proc/cpuinfo")
 	if err != nil {
 		return nil, err
 	}

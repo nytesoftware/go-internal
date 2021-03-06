@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
+//go:build aix || darwin || dragonfly || freebsd || linux || netbsd || openbsd || solaris || windows
 // +build aix darwin dragonfly freebsd linux netbsd openbsd solaris windows
 
 package poll_test
 
 import (
+	. "internal/poll"
 	"io"
 	"testing"
-
-	. "github.com/nytesoftware/go-internal/poll"
 )
 
 var eofErrorTests = []struct {

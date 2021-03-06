@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
+//go:build 386 || amd64
 // +build 386 amd64
 
 package cpu_test
 
 import (
+	. "internal/cpu"
 	"os"
 	"runtime"
 	"testing"
-
-	. "github.com/nytesoftware/go-internal/cpu"
 )
 
 func TestX86ifAVX2hasAVX(t *testing.T) {

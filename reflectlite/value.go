@@ -5,10 +5,9 @@
 package reflectlite
 
 import (
+	"internal/unsafeheader"
 	"runtime"
 	"unsafe"
-
-	"github.com/nytesoftware/go-internal/unsafeheader"
 )
 
 const ptrSize = 4 << (^uintptr(0) >> 63) // unsafe.Sizeof(uintptr(0)) but an ideal const
@@ -161,7 +160,10 @@ type ValueError struct {
 }
 
 func (e *ValueError) Error() string {
-	return "reflect: call of " + e.Method + " on zero Value"
+	if e.Kind == 0 {
+		return "reflect: call of " + e.Method + " on zero Value"
+	}
+	return "reflect: call of " + e.Method + " on " + e.Kind.String() + " Value"
 }
 
 // methodName returns the name of the calling method,
