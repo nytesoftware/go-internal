@@ -6,7 +6,7 @@ package poll_test
 
 import (
 	"errors"
-	"internal/poll"
+	"github.com/nytesoftware/go-internal/poll"
 	"os"
 	"syscall"
 )

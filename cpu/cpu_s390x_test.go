@@ -6,7 +6,7 @@ package cpu_test
 
 import (
 	"errors"
-	. "internal/cpu"
+	. "github.com/nytesoftware/go-internal/cpu"
 	"os"
 	"regexp"
 	"testing"

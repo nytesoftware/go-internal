@@ -8,9 +8,10 @@
 package poll_test
 
 import (
-	. "internal/poll"
 	"io"
 	"testing"
+
+	. "github.com/nytesoftware/go-internal/poll"
 )
 
 var eofErrorTests = []struct {

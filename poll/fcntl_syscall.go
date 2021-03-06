@@ -8,7 +8,7 @@
 package poll
 
 import (
-	"internal/syscall/unix"
+	"github.com/nytesoftware/go-internal/syscall/unix"
 	"syscall"
 )
 

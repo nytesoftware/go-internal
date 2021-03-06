@@ -8,7 +8,7 @@
 package execenv
 
 import (
-	"internal/syscall/windows"
+	"github.com/nytesoftware/go-internal/syscall/windows"
 	"syscall"
 	"unicode/utf16"
 	"unsafe"

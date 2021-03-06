@@ -5,7 +5,7 @@
 package poll
 
 import (
-	"internal/syscall/unix"
+	"github.com/nytesoftware/go-internal/syscall/unix"
 	"sync/atomic"
 	"syscall"
 )

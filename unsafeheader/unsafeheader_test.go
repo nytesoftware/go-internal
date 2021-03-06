@@ -6,10 +6,11 @@ package unsafeheader_test
 
 import (
 	"bytes"
-	"internal/unsafeheader"
 	"reflect"
 	"testing"
 	"unsafe"
+
+	"github.com/nytesoftware/go-internal/unsafeheader"
 )
 
 // TestTypeMatchesReflectType ensures that the name and layout of the

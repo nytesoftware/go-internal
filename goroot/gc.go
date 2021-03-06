@@ -8,11 +8,12 @@
 package goroot
 
 import (
-	exec "internal/execabs"
 	"os"
 	"path/filepath"
 	"strings"
 	"sync"
+
+	exec "github.com/nytesoftware/go-internal/execabs"
 )
 
 // IsStandardPackage reports whether path is a standard package,
